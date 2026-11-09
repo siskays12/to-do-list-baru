@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="logo">T</div>
+            <div>
+                <h1>TaskFlow</h1>
+                <p>Atur tugasmu, capai tujuanmu.</p>
+            </div>
+        </header>
+
+        <section class="summary">
+            <div class="summary-card">
+                <span>Total Tugas</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+            <div class="summary-card">
+                <span>Belum Selesai</span>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+            <div class="summary-card">
+                <span>Selesai</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </section>
+
+        <section class="task-panel">
+            <h2>Tambah Tugas</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskInput">Nama tugas</label>
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Contoh: Mengerjakan laporan"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDate">Tenggat waktu</label>
+                    <input type="date" id="taskDate">
+                </div>
+
+                <button type="submit" class="add-button">
+                    + Tambah Tugas
+                </button>
+            </form>
+        </section>
+
+        <section class="list-panel">
+            <div class="list-header">
+                <h2>Daftar Tugas</h2>
+                <select id="filterTasks" aria-label="Filter tugas">
+                    <option value="all">Semua Tugas</option>
+                    <option value="pending">Belum Selesai</option>
+                    <option value="completed">Selesai</option>
+                </select>
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+        </section>
+
+        <footer>
+            TaskFlow &copy; 2026 - Aplikasi Manajemen Tugas
+        </footer>
+    </main>
+</body>
+</html>
